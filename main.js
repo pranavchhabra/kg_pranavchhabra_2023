@@ -11,6 +11,9 @@ function main(array) {
     if (currentNum == 0) {
       currentString += "Zero";
     } else {
+      if (currentNum < 0) {
+        currentNum = currentNum * -1;
+      }
       while (currentNum > 0) {
         var lastDigit = currentNum % 10;
         currentString = dict[lastDigit] + currentString;
@@ -20,6 +23,9 @@ function main(array) {
     }
     if (i != array.length - 1) {
       currentString += ',';
+    }
+    if (array[i] < 0) {
+      currentString = "Negative" + currentString;
     }
     retStr = retStr + currentString;
   }
