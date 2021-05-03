@@ -8,11 +8,15 @@ function main(array) {
     var currentString = "";
     var currentNum = array[i];
 
-    while (currentNum > 0) {
-      var lastDigit = currentNum % 10;
-      currentString = dict[lastDigit] + currentString;
+    if (currentNum == 0) {
+      currentString += "Zero";
+    } else {
+      while (currentNum > 0) {
+        var lastDigit = currentNum % 10;
+        currentString = dict[lastDigit] + currentString;
 
-      currentNum = Math.floor(currentNum/10);
+        currentNum = Math.floor(currentNum/10);
+      }
     }
     if (i != array.length - 1) {
       currentString += ',';
